@@ -40,21 +40,21 @@ You can access phpmyadmin at localhost:8080 where port 8080 is defined in your
  After following the above steps now it is the time to start Magento Installation
  
  #### New Magento 2 Installation
- - Copy Magento 2 source code inside source folder. In my case it is /var/www/sprinix/source/.
- - Now move into app container in order to set permissions, use "docker exec -it sprinix_app bash" where sprinix is your project name.
+ - Copy Magento 2 source code inside source folder. In my case it is `/var/www/sprinix/source/`.
+ - Now move into app container in order to set permissions, use `docker exec -it sprinix_app bash` where sprinix is your project name.
  - After setting proper permissions you can start Magento web setup wizard by visiting localhost in your browser.
  - While setting up it will ask you for mysql host which is "mysql".
- - Mysql username and password is root as defined in docker-compose.yml
+ - Mysql username and password is root as defined in `docker-compose.yml`
  
  
 #### Configure Existing Magento 2 project
-- Put source code in ./source directory
+- Put source code in `./source` directory
 - Create a new db using phpmyadmin
-- Import DB using command "docker exec -i sprinix_mysql mysql -u root -proot db_name < mysqldumpfilename.sql" where sprinix is project name.
+- Import DB using command `docker exec -i sprinix_mysql mysql -u root -proot db_name < mysqldumpfilename.sql` where sprinix is project name.
 - Now update your project URL in core_config_data for project base URL.
 
 #### Troubleshooting
-- If you see Error "ERROR: Couldn't connect to Docker daemon - you might need to run `docker-machine start default`." then make sure all the directories in the current folder has the same ownership. or Delete the .db-data directory
+- If you see Error "ERROR: Couldn't connect to Docker daemon - you might need to run `docker-machine start default`." then make sure all the directories in the current folder has the same ownership. or Delete the `.db-data` directory
  
 ##### Warning
 Do not use this for production version
