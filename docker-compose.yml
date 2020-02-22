@@ -1,0 +1,47 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+      args:
+        apache_user: ${APP_USER}
+        USER_ID: ${USER_ID:-0}
+    image: ${PROJECT_NAME}_web
+    container_name: ${PROJECT_NAME}_app
+    ports:
+      - "80:80"
+    volumes:
+      - ${PWD}/source:/var/www/html
+      - ${HOME}/.composer/cache:/home/${APP_USER}/.composer/cache
+      - .docker/magento-php.ini:/usr/local/etc/php/conf.d/magento-php.ini
+    links:
+      - mysql
+  mysql:
+    image: mariadb:10.2
+    container_name: ${PROJECT_NAME}_mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=root
+    volumes:
+      - .db-data:/var/lib/mysql
+  phpmyadmin:
+    container_name: ${PROJECT_NAME}_phpmyadmin
+    restart: always
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    ports:
+      - "8080:80"
+    links:
+      - mysql:db
+    depends_on:
+      - mysql
+volumes:
+  db-data:
+    external: false
