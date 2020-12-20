@@ -70,9 +70,10 @@ You can learn about docker at https://www.docker.com/why-docker.
 `cp .env.sample .env`
 
 4. Update .env file for environment variables:
- PROJECT_NAME: sprinix(Here I assume sprinix is your Magento application name),\
- APP_USER: sprinix (This should hold your current user name which you can check by running command "whoami".)\
- USER_ID: 1000 (This will hold your current user's id which you can find by running "echo $UID" or just by "id" command. In most cases it is 1000 for default user.)\
+
+ **PROJECT_NAME:** sprinix(Here I assume sprinix is your Magento application name),\
+ **APP_USER:** sprinix (This should hold your current user name which you can check by running command "whoami".)\
+ **USER_ID:** 1000 (This will hold your current user's id which you can find by running "echo $UID" or just by "id" command. In most cases it is 1000 for default user.)
  5. Now run "docker-compose build", this may take sometime to download image & prepare build.
  
  `docker-compose build`
