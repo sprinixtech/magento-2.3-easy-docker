@@ -5,15 +5,10 @@ Run Magento 2.3.* in docker container easily using docker-compose
 Each file in this repo has it's own significance
 
 |_ .docker/        \\Holds configuration files
-
 |_____ Dockerfile       \\This file is responsible for creating app container, required php version is specified here
-
 |_____ magento-php.ini        \\Here you can set php variables
-
 |_ source/           \\This is the folder where your Magento's source code land
-
 |_ .env.sample       \\This is a sample file for creating .env which is a must for running containers
-
 |_ docker-compose.yml       \\This is the main configuration file that is responsible for managing all containers.
 
 ## Supported Stack
