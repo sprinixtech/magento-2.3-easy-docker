@@ -14,11 +14,29 @@ PhpMyAdmin
 You must be familiar with linux commands. If you know docker commands then it is plus point for you.
 
 ### Dependency
-- docker : Install docker by following any suitable tutorial that best describes for your linux distribution. You can follow digitalocean's blog https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04.
+- docker : 
+Install docker by following official guide https://docs.docker.com/engine/install/ and choose your distribution. In my case I am using ubuntu. Follow this if you are good in linux.
+OR
+Install docker by following any suitable tutorial that best describes for your linux distribution. You can follow digitalocean's blog https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04.
+
 - docker-compose : Then install docker compose tool. Helpful link https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04.
+OR
+you can follow official guide to install docker-compose https://docs.docker.com/compose/install/.
+
+### Environment Verification
+- check docker is running from not root and without sudo if bellow command executes successfully for your user.
+`docker run hello-world`
+if this gives error then you missed adding your user to docker group. Follow below link to resolve this
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04#step-2-%E2%80%94-executing-the-docker-command-without-sudo-optional
+
+if it works then you will see "Hello from Docker!" in output content.
+
+- check docker-composer command running fine for your user by running
+`docker-compose --version`
+This should output installed version of docker compose.
 
 ### How it works
-If you are familiar with docker then you already know but if ou don't then don't worry you can work without knowing it.
+If you are familiar with docker then you already know but if you don't then don't worry you can work without knowing it. You just need to memorise few commands.
 You can learn about docker at https://www.docker.com/why-docker.
 
 ### Accessing PhpMyAdmin
