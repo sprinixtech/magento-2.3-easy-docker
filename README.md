@@ -167,7 +167,7 @@ Once you have completed your work you can down these containers to free up your 
 
 Just run below command in the directory where your project's docker-compose.yml file exists.
 
-`docker-compoe down`
+`docker-compose down`
 
 ### starting project
 Run below command
