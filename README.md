@@ -207,4 +207,4 @@ if you don't care about db imported then you just need to delete .db-data direct
 This is not intentionally created for production but you can use at your own risk.
 
 ### Support
-If you have any issue You can write to me at gulshan.4dream@gmail.com or gulshan@sprinix.com.
+If you have any issue You can write to me at gulshan.4dream@gmail.com or gulshan.maurya@sprinix.com.
